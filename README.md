@@ -28,5 +28,11 @@ https://xxxxx.backlog.jp/view/zzzz | issue summary 3     | hogehogehoge.........
 ### Usage with `peco`
 
 ```
-alias bls=echo $(backlog-issues ls | peco) | awk '{print $1}' | xargs open
+alias row='() {awk "{print \$${1:-1}}"}'
+alias bls='(){ echo $(backlog-issues ls | peco) | row 1 | xargs open}'
+```
+
+```
+$ bls
+-> select to open in web browser
 ```
