@@ -6,6 +6,7 @@ backlog-issues
 - Download here https://github.com/mitakeck/backlog-issues/releases/tag/v0.0.1
 
 ```
+$ wget https://github.com/mitakeck/backlog-issues/releases/download/v0.0.1/backlog-issues_darwin_amd64
 $ mv backlog-issues* backlog-issues
 
 # generate api token from  https://xxxxx.backlog.jp/EditApiSettings.action
