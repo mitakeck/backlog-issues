@@ -3,7 +3,7 @@ backlog-issues
 
 ## Setup
 
-- Download here https://github.com/mitakeck/backlog-issues/releases/tag/v0.0.1
+- Download here https://github.com/mitakeck/backlog-issues/releases/tag/v0.0.2
 
 ```
 $ wget https://github.com/mitakeck/backlog-issues/releases/download/v0.0.1/backlog-issues_darwin_amd64
