@@ -12,8 +12,10 @@ import (
 var (
 	app = kingpin.New("backlog-issue", "backlog-issues")
 
-	login = app.Command("login", "login")
-	ls    = app.Command("ls", "show issues")
+	login       = app.Command("login", "login")
+	ls          = app.Command("ls", "show issues")
+	lsSearchWod = ls.Arg("s", "search word").String()
+
 	token = os.Getenv("BACKLOG_TOKEN")
 	space = os.Getenv("BACKLOG_SPACE")
 )
@@ -28,7 +30,8 @@ func main() {
 	case login.FullCommand():
 		fmt.Println("login")
 	case ls.FullCommand():
-		issues, _ := issues(space, token)
+		issues, _ := issues(space, token, *lsSearchWod)
+
 		table := tablewriter.NewWriter(os.Stdout)
 		table.SetHeader([]string{"URL", "Summary", "Description"})
 		for _, issue := range issues {
